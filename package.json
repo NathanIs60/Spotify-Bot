@@ -1,0 +1,78 @@
+{
+  "name": "spotify-dk-bot",
+  "version": "1.0.0",
+  "description": "Spotify dakika kasma botu - Desktop ve Web hibrit uygulaması",
+  "main": "electron/main.js",
+  "homepage": "https://github.com/NathanIs60/Spotify-Bot#readme",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:next\" \"npm run dev:electron\"",
+    "dev:next": "next dev",
+    "dev:electron": "nodemon --exec electron electron/main.js --watch electron/",
+    "build": "next build",
+    "build:electron": "npm run build && electron-builder",
+    "start": "next start",
+    "lint": "next lint",
+    "electron": "electron electron/main.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.spotifydkbot.app",
+    "productName": "Spotify DK Bot",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "electron/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "public/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://YOUR_TOKEN@github.com/NathanIs60/Spotify-Bot.git"
+  },
+  "keywords": [
+    "spotify",
+    "bot",
+    "music",
+    "streaming",
+    "desktop",
+    "electron"
+  ],
+  "author": "Spotify DK Bot Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NathanIs60/Spotify-Bot/issues"
+  },
+  "dependencies": {
+    "@electron/packager": "^18.4.0",
+    "@types/node": "^24.2.1",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "autoprefixer": "^10.4.21",
+    "clsx": "^2.1.1",
+    "concurrently": "^9.2.0",
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12",
+    "next": "^15.4.6",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.5.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "@types/electron": "^1.4.38"
+  }
+}
