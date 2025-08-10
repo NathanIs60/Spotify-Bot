@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "@electron/packager": "^18.4.0",
+    "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "^24.2.1",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
